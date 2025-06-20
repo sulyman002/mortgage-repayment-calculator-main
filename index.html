@@ -10,10 +10,10 @@
 </head>
 
 <body class="bg-slate-300 flex justify-center md:items-center w-full h-screen">
-    <main class="w-full md:w-[900px] md:grid md:grid-cols-2">
-        <div class="px-8 md:rounded-l-[20px] py-6 sm:px-8 gap-4 w-full flex flex-col bg-white shadow">
+    <main class="w-full md:w-[900px] md:grid md:grid-cols-2 bg-white md:rounded-l-[20px] md:rounded-r-[30px] shadow">
+        <div class="px-8 md:rounded-l-[20px] pt-8 py-6 sm:px-8 gap-4 w-full flex flex-col  ">
             <div class="md:flex md:items-center md:justify-between">
-                <h1 class="text-xl font-semibold">Mortgage Calculator</h1>
+                <h1 class="md:text-xl text-2xl font-semibold">Mortgage Calculator</h1>
                 <a href="#" class="text-[.85rem] hover:text-slate-900 underline text-slate-400">Clear All</a>
             </div>
             <div class="w-full flex flex-col">
@@ -71,11 +71,28 @@
                     </div>
                 </div>
 
-                <div>
-                    <img src="" alt="">
-                    <h2>Results shown here</h2>
-                    <p>Complete the form and click "calculate repayments" to see what your monthly repayments would be.
+                <div class="bg-slate-800 hidden text-white flex flex-col md:rounded-r-[30px] md:rounded-bl-[100px] justify-center items-center px-8 py-12">
+                    <img src="/images/illustration-empty.svg" alt="">
+                    <h2 class="font-bold text-[20px] mt-4">Results shown here</h2>
+                    <p class="text-center mt-6">Complete the form and click "calculate repayments" to see what your monthly repayments would be.
                     </p>
+                </div>
+
+
+                <div class="bg-slate-800 text-white flex flex-col md:rounded-r-[30px] md:rounded-bl-[100px] justify-center items-center px-8 py-12">
+                    <h1>Your results</h1>
+                    <p class="text-[14px] text-slate-300">Your results are shown below based on the information you provided. To adjust the results, edit the form and click "calculate repayments" again.</p>
+                    <div class=" border-t-4 border-lime-400 rounded-t-lg w-full bg-slate-900 p-6 mt-8">
+                        <div class="border-b-[.1px] border-slate-600">
+                            <p class="text-[12px] text-slate-300">Your monthly repayments</p>
+                            <h1 class="text-lime-400 text-4xl font-semibold mt-2 mb-6">£1,797.74</h1>
+                        </div>
+
+                        <div>
+                            <p class="text-[14px] text-slate-300 mt-6">Total you'll repay over the team</p>
+                            <h1 class="text-white text-1xl font-semibold">£539,322.94</h1>
+                        </div>
+                    </div>
                 </div>
 
 
