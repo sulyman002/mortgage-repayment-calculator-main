@@ -1,12 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>mortgage-repayment ~ pulsepoint</title>
+    <link rel="shortcut icon" href="/images/favicon-32x32.png" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    
+
+<body class="bg-slate-300 flex justify-center md:items-center w-full h-screen">
+    <main class="w-full md:w-[900px] md:grid md:grid-cols-2">
+        <div class="px-4 md:rounded-l-[20px] py-6 sm:px-8 gap-4 w-full flex flex-col bg-white shadow">
+            <div class="md:flex md:items-center md:justify-between">
+                <h1 class="text-xl font-semibold">Mortgage Calculator</h1>
+                <a href="#" class="text-[.85rem] hover:text-slate-900 underline text-slate-400">Clear All</a>
+            </div>
+            <div class="w-full flex flex-col">
+                <p class="text-[.85rem] mb-2 text-slate-500 font-semibold">Mortgage Amount</p>
+                <div class="w-full relative">
+                    <div
+                        class="absolute left-0 h-full rounded-l-sm bg-slate-200 w-6 bg-red-200 flex items-center justify-center top-0">
+                        £</div>
+                    <input type="text"
+                        class="w-full flex border border-solid-3 border-slate-400 hover:outline pl-8 cursor-pointer hover:outline-1 inline-block p-[4px] rounded-sm">
+                </div>
+            </div>
+
+            <div class="md:flex md:items-center md:justify-center gap-4">
+                <div class="w-[px]">
+                    <p class="text-[.85rem] mb-2 text-slate-500 font-semibold">Mortgage Team</p>
+                    <div class="relative">
+                        <div class="absolute right-0 h-full rounded-l-sm text-slate-600 font-semibold bg-slate-200 w-16  bg-red-200 flex items-center justify-center top-0"">years</div>
+                        <input type=" text"
+                            class="w-full flex border border-solid-3 border-slate-400 items-center hover:outline cursor-pointer hover:outline-1 inline-block p-[4px] rounded-sm">
+                        </div>
+                    </div>
+
+                    <div class="w-[px]">
+                        <p class="text-[.85rem] mb-2 text-slate-500 font-semibold">Mortgage Team</p>
+                        <div class="relative">
+                            <div class="absolute right-0 h-full rounded-l-sm text-slate-600 font-semibold bg-slate-200 w-8  bg-red-200 flex items-center justify-center top-0"">%</div>
+                        <input type=" text"
+                                class="w-full flex border border-solid-3 border-slate-400 items-center hover:outline cursor-pointer hover:outline-1 inline-block p-[4px] rounded-sm">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="text-[.85rem] mb-2 text-slate-500 font-semibold">Mortgage Type</p>
+                        <div class="relative">
+                            <div class="w-full h-[37px] flex items-center rounded-[3px] hover:border hover:border-solid-3 hover:border-lime-400 border border-solid-3 border-slate-400 pl-4 gap-4 bg-white mb-2">
+                                <input type="radio" name="" id="firstRadio" name="type">
+                                <label for="firstRadio" class="font-semibold">Repayment</label>
+                            </div>
+                        </div>
+
+                        <div class="relative">
+                            <div class="w-full h-[37px] flex items-center rounded-[3px] hover:border hover:border-solid-3   hover:border-lime-400 border border-solid-3 border-slate-400 pl-4 gap-4 bg-white mb-2">
+                                <input type="radio" name="" id="firstRadio" name="type">
+                                <label for="firstRadio" class="font-semibold">Interest Only</label>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="flex mb-2 items-center justify-center gap-2 bg-lime-400 w-3/4 p-4 rounded-full">
+                        <img src="/images/icon-calculator.svg" alt="">
+                        <p class="font-semibold ">Calculate Repayments</p>
+                    </div>
+                </div>
+
+                <div>
+                    <img src="" alt="">
+                    <h2>Results shown here</h2>
+                    <p>Complete the form and click "calculate repayments" to see what your monthly repayments would be.
+                    </p>
+                </div>
+
+
+    </main>
+
+
     <script src="script.js"></script>
 </body>
+
 </html>
