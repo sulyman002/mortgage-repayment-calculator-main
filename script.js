@@ -5,7 +5,10 @@ const mortgageAmount = document.getElementById('mortgageAmount');// first input
 const mortgageTeam = document.getElementById('mortgageTeam'); // second input
 const interestRate = document.getElementById('interestRate'); //third input
 const monthlyPayment = document.getElementById('monthlyPayment');
+const yearlyPayment = document.getElementById('yearlyPayment');
 
+const repayment = document.getElementById('repayment');
+const interestOnly = document.getElementById('interestOnly');
 
 
 
@@ -13,8 +16,6 @@ submitBtn.addEventListener('click', function () {
     const euroSign = document.getElementById('euroSign');
     const year = document.getElementById('year');
     const percent = document.getElementById('percent');
-    const repayment = document.getElementById('repayment');
-    const interestOnly = document.getElementById('interestOnly');
     const radiosError = document.getElementById('radiosError');
 
 
@@ -60,22 +61,54 @@ submitBtn.addEventListener('click', function () {
     } else {
         radiosError.classList.add('hidden');
     }
- 
-    repaymentMethod()
+
+    if(repayment.checked){
+        repaymentMethod()
+    }else{
+        ''
+    }
+    
+    if(interestOnly.checked){
+        interestOnlyMethod()
+    }else{
+        ''
+    }
+
+    
 });
 
 
 //calculation
 
 
-let result;
+let resultMontly;
+let resultYearly;
 
 
-    function repaymentMethod() {
-     let rate = interestRate.value.trim();
-     const interestRateResult = (rate / 100) / 12;
-     result = interestRateResult;
-     monthlyPayment.textContent = `$${result}`;
+function repaymentMethod() {
+    let rate = interestRate.value.trim();
+    let mortgageT = mortgageTeam.value.trim();
+    let mortgageA = mortgageAmount.value.trim();// p
+    const interestRateResult = (rate / 100) / 12;//r
+    const numberOfPayment = mortgageT * 12;//n
+    resultMontly = mortgageA * (interestRateResult * (1 + interestRateResult) ** numberOfPayment) / ((1 + interestRateResult) ** numberOfPayment - 1);
+    resultYearly = resultMontly * 300;
+    monthlyPayment.textContent = `£${resultMontly.toFixed(2)}`;
+    yearlyPayment.textContent = `£${resultYearly.toFixed(2)}`;
+}
+
+let resultMontlly;
+let resultYearlly;
+
+function interestOnlyMethod() {
+    let rate = interestRate.value.trim();
+    let mortgageA = mortgageAmount.value.trim();// p
+    const interestRateResult = (rate / 100) / 12;//r
+    resultMontlly = mortgageA * interestRateResult;
+    resultYearlly = resultMontly * 300;
+    monthlyPayment.textContent = `£${resultMontlly.toFixed(2)}`;
+    yearlyPayment.textContent = `£${resultYearlly.toFixed(2)}`;
+    
 }
 
 
