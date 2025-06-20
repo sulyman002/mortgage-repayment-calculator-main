@@ -105,7 +105,7 @@ function interestOnlyMethod() {
     let mortgageA = mortgageAmount.value.trim();// p
     const interestRateResult = (rate / 100) / 12;//r
     resultMontlly = mortgageA * interestRateResult;
-    resultYearlly = resultMontly * 300;
+    resultYearlly = resultMontlly * 300;
     monthlyPayment.textContent = `£${resultMontlly.toFixed(2)}`;
     yearlyPayment.textContent = `£${resultYearlly.toFixed(2)}`;
     
