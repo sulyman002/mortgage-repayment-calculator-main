@@ -1,20 +1,19 @@
 //error state
 
 const submitBtn = document.getElementById('submit');
-
-
-
-submitBtn.addEventListener('click', function(){
-    
 const mortgageAmount = document.getElementById('mortgageAmount');
 const mortgageTeam = document.getElementById('mortgageTeam'); 
 const interestRate = document.getElementById('interestRate');
+
+
+
+submitBtn.addEventListener('click', function(){    
 const euroSign = document.getElementById('euroSign');
 const year = document.getElementById('year');
 const percent = document.getElementById('percent');
-// const repayment = document.getElementById('repayment');
-// const InterestOnly document.getElementById('InterestOnly');
-// const radiosError = document.getElementById('radiosError');
+const repayment = document.getElementById('repayment');
+const interestOnly = document.getElementById('interestOnly');
+const radiosError = document.getElementById('radiosError');
 
 
 const interestRateError = document.getElementById('interestRateError');
@@ -54,13 +53,16 @@ const mortgageTeamError = document.getElementById('mortgageTeamError');
         percent.style.color = '';
     }
 
-    // if(!repayment.checked && !InterestOnly.checked){
-    //     radiosError.classList.remove('hidden');
-    // }else{
-    //     radiosError.classList.add('hidden');
-    // }
+    if(!repayment.checked && !interestOnly.checked){
+        radiosError.classList.remove('hidden');
+    }else{
+        radiosError.classList.add('hidden');
+    }
     
 });
+
+
+//calculation
 
 
 
