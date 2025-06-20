@@ -19,53 +19,57 @@
             <div class="w-full flex flex-col">
                 <p class="text-[.85rem] mb-2 text-slate-500 font-semibold">Mortgage Amount</p>
                 <div class="w-full relative">
-                    <div
+                    <div id="euroSign"
                         class="absolute left-0 h-full rounded-l-lg bg-slate-200 w-10 bg-red-200 text-slate-600 font-semibold flex items-center justify-center top-0">
                         £</div>
-                    <input type="text"
-                        class="w-full flex border border-solid-3 border-slate-400 hover:outline pl-8 cursor-pointer hover:outline-1 inline-block p-[11px] rounded-lg">
+                    <input id="mortgageAmount" type="number"
+                        class="w-full flex border border-solid-3 border-slate-400 hover:outline pl-11 cursor-pointer hover:outline-1 inline-block p-[11px] rounded-lg">
                 </div>
+                <p class="text-[14px] hidden text-red-800 mt-1 font-semibold" id="mortgageAmountError">This field is required</p>
             </div>
 
             <div class="md:flex md:items-center md:justify-center gap-4">
                 <div class="w-[px]">
                     <p class="text-[.85rem] mb-2 text-slate-500 font-semibold">Mortgage Team</p>
                     <div class="relative">
-                        <div class="absolute right-0 h-full rounded-r-lg text-slate-600 font-semibold bg-slate-200 w-20  bg-red-200 flex items-center justify-center top-0"">years</div>
-                        <input type=" text"
+                        <div id="year" class="absolute right-0 h-full rounded-r-lg text-slate-600 font-semibold bg-slate-200 w-20  bg-red-200 flex items-center justify-center top-0"">years</div>
+                        <input type="number" id="mortgageTeam"
                             class="w-full flex border border-solid-3 border-slate-400 items-center hover:outline cursor-pointer hover:outline-1 inline-block p-[11px] rounded-lg">
                         </div>
+                        <p class="text-[14px] hidden text-red-800 mt-1 font-semibold" id="mortgageTeamError">This field is required</p>
                     </div>
 
                     <div class="w-[px]">
-                        <p class="text-[.85rem] mb-2 text-slate-500 font-semibold">Mortgage Team</p>
+                        <p class="text-[.85rem] mb-2 text-slate-500 font-semibold">Interest Rate</p>
                         <div class="relative">
-                            <div class="absolute right-0 h-full rounded-r-lg text-slate-600 font-semibold bg-slate-200 w-12 bg-red-200 flex items-center justify-center top-0"">%</div>
-                        <input type=" text"
+                            <div id="percent" class="absolute right-0 h-full rounded-r-lg text-slate-600 font-semibold bg-slate-200 w-12 bg-red-200 flex items-center justify-center top-0"">%</div>
+                        <input type="number" id="interestRate"
                                 class="w-full flex border border-solid-3 border-slate-400 items-center hover:outline cursor-pointer hover:outline-1 inline-block p-[11px] rounded-lg">
                             </div>
+                            <p class="text-[14px] hidden text-red-800 mt-1 font-semibold" id="interestRateError">This field is required</p>
                         </div>
                     </div>
 
                     <div>
                         <p class="text-[.85rem] mb-2 text-slate-500 font-semibold">Mortgage Type</p>
-                        <div>
+                        <div class="cursor-pointer">
                             <div class="w-full h-[50px] flex items-center rounded-lg hover:border hover:border-solid-3 hover:border-lime-400 border border-solid-3 border-slate-400 pl-4 gap-4 bg-white mb-2">
-                                <input type="radio" name="" id="firstRadio" name="type">
-                                <label for="firstRadio" class="font-semibold">Repayment</label>
+                                <input type="radio" id="repayment" name="type">
+                                <label for="repayment" class="font-semibold">Repayment</label>
                             </div>
                         </div>
 
-                        <div class="mt-4">
+                        <div class="mt-4 cursor-pointer">
                             <div class="w-full h-[50px] flex items-center rounded-lg hover:border hover:border-solid-3   hover:border-lime-400 border border-solid-3 border-slate-400 pl-4 gap-4 bg-white mb-2">
-                                <input type="radio" name="" id="firstRadio" name="type">
-                                <label for="firstRadio" class="font-semibold">Interest Only</label>
+                                <input type="radio" id="InterestOnly" name="type">
+                                <label for="InterestOnly" class="font-semibold">Interest Only</label>
                             </div>
                         </div>
+                        <p class="text-[14px] hidden text-red-800 mt-1 font-semibold" id="radiosError">This field is required</p>
 
                     </div>
 
-                    <div class="flex mb-2 items-center justify-center gap-2 bg-lime-400 mb:w-3/4 p-4 rounded-full">
+                    <div id="submit" class="flex mb-2 items-center justify-center gap-2 bg-lime-400 cursor-pointer hover:bg-lime-200 mb:w-3/4 p-4 rounded-full">
                         <img src="/images/icon-calculator.svg" alt="">
                         <p class="font-semibold ">Calculate Repayments</p>
                     </div>
@@ -90,7 +94,7 @@
 
                         <div>
                             <p class="text-[14px] text-slate-300 mt-6">Total you'll repay over the team</p>
-                            <h1 class="text-white text-1xl font-semibold">£539,322.94</h1>
+                            <h1 class="text-white text-1xl font-semibold" id="">£539,322.94</h1>
                         </div>
                     </div>
                 </div>
