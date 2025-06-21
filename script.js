@@ -6,6 +6,8 @@ const mortgageTeam = document.getElementById('mortgageTeam'); // second input
 const interestRate = document.getElementById('interestRate'); //third input
 const monthlyPayment = document.getElementById('monthlyPayment');
 const yearlyPayment = document.getElementById('yearlyPayment');
+const resultInfo = document.getElementById('resultInfo');
+const preResult = document.getElementById('preResult');
 
 const repayment = document.getElementById('repayment');
 const interestOnly = document.getElementById('interestOnly');
@@ -74,6 +76,13 @@ submitBtn.addEventListener('click', function () {
         ''
     }
 
+    if(monthlyPayment.textContent.includes('£') && yearlyPayment.textContent.includes('£')) {
+        preResult.classList.add('hidden');
+        resultInfo.classList.remove('hidden');
+    }else{
+        resultInfo.classList.add('hidden');
+    }
+
     
 });
 
@@ -110,5 +119,17 @@ function interestOnlyMethod() {
     yearlyPayment.textContent = `£${resultYearlly.toFixed(2)}`;
     
 }
+
+const clearAll = document.getElementById('clearAll');
+
+
+clearAll.addEventListener('click', function(){
+    mortgageAmount.textContent = ``;
+    mortgageTeam.textContent = '';
+    interestRate.textContent = '';
+    monthlyPayment.textContent = '';
+    yearlyPayment.textContent = '';
+
+})
 
 
