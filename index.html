@@ -14,7 +14,7 @@
         <div class="px-8 md:rounded-l-[20px] pt-8 py-6 sm:px-8 gap-4 w-full flex flex-col  ">
             <div class="md:flex md:items-center md:justify-between">
                 <h1 class="md:text-xl text-2xl font-semibold">Mortgage Calculator</h1>
-                <a href="#" class="text-[.85rem] hover:text-slate-900 underline text-slate-400" id="clearAll" >Clear All</a>
+                <a href="#" class="text-[.85rem] hover:text-slate-900 underline text-slate-400 cursor-pointer" id="clearAll" >Clear All</a>
             </div>
             <div class="w-full flex flex-col">
                 <p class="text-[.85rem] mb-2 text-slate-500 font-semibold">Mortgage Amount</p>
@@ -52,14 +52,14 @@
 
                     <div>
                         <p class="text-[.85rem] mb-2 text-slate-500 font-semibold">Mortgage Type</p>
-                        <div class="cursor-pointer">
+                        <div class="cursor-pointer radio1">
                             <div class="w-full h-[50px] flex items-center rounded-lg hover:border hover:border-solid-3 hover:border-lime-400 border border-solid-3 border-slate-400 pl-4 gap-4 bg-white mb-2">
                                 <input type="radio" id="repayment" name="type">
                                 <label for="repayment" class="font-semibold">Repayment</label>
                             </div>
                         </div>
 
-                        <div class="mt-4 cursor-pointer">
+                        <div class="mt-4 cursor-pointer radio2">
                             <div class="w-full h-[50px] flex items-center rounded-lg hover:border hover:border-solid-3   hover:border-lime-400 border border-solid-3 border-slate-400 pl-4 gap-4 bg-white mb-2">
                                 <input type="radio" id="interestOnly" name="type">
                                 <label for="interestOnly" class="font-semibold">Interest Only</label>

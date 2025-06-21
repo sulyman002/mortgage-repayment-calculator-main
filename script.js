@@ -8,6 +8,8 @@ const monthlyPayment = document.getElementById('monthlyPayment');
 const yearlyPayment = document.getElementById('yearlyPayment');
 const resultInfo = document.getElementById('resultInfo');
 const preResult = document.getElementById('preResult');
+const radio1 = document.querySelector('.radio1');
+const radio2 = document.querySelector('.radio2');
 
 const repayment = document.getElementById('repayment');
 const interestOnly = document.getElementById('interestOnly');
@@ -66,6 +68,8 @@ submitBtn.addEventListener('click', function () {
 
     if(repayment.checked){
         repaymentMethod()
+        radio1.style.backgroundColor = 'yellow'; // check on this later
+
     }else{
         ''
     }
@@ -120,16 +124,19 @@ function interestOnlyMethod() {
     
 }
 
+
+
+//clear all
 const clearAll = document.getElementById('clearAll');
 
 
 clearAll.addEventListener('click', function(){
-    mortgageAmount.textContent = ``;
-    mortgageTeam.textContent = '';
-    interestRate.textContent = '';
+    mortgageAmount.value = '';
+    mortgageTeam.value = '';
+    interestRate.value = '';
     monthlyPayment.textContent = '';
     yearlyPayment.textContent = '';
 
-})
+});
 
 
