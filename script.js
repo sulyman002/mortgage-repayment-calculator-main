@@ -66,28 +66,28 @@ submitBtn.addEventListener('click', function () {
         radiosError.classList.add('hidden');
     }
 
-    if(repayment.checked){
+    if (repayment.checked) {
         repaymentMethod()
         radio1.style.backgroundColor = 'yellow'; // check on this later
 
-    }else{
-        ''
-    }
-    
-    if(interestOnly.checked){
-        interestOnlyMethod()
-    }else{
+    } else {
         ''
     }
 
-    if(monthlyPayment.textContent.includes('£') && yearlyPayment.textContent.includes('£')) {
+    if (interestOnly.checked) {
+        interestOnlyMethod()
+    } else {
+        ''
+    }
+
+    if (monthlyPayment.textContent.includes('£') && yearlyPayment.textContent.includes('£')) {
         preResult.classList.add('hidden');
         resultInfo.classList.remove('hidden');
-    }else{
+    } else {
         resultInfo.classList.add('hidden');
     }
 
-    
+
 });
 
 
@@ -105,7 +105,7 @@ function repaymentMethod() {
     const interestRateResult = (rate / 100) / 12;//r
     const numberOfPayment = mortgageT * 12;//n
     resultMontly = mortgageA * (interestRateResult * (1 + interestRateResult) ** numberOfPayment) / ((1 + interestRateResult) ** numberOfPayment - 1);
-    resultYearly = resultMontly * 300;
+    resultYearly = resultMontly * (mortgageT * 12);
     monthlyPayment.textContent = `£${resultMontly.toFixed(2)}`;
     yearlyPayment.textContent = `£${resultYearly.toFixed(2)}`;
 }
@@ -118,10 +118,10 @@ function interestOnlyMethod() {
     let mortgageA = mortgageAmount.value.trim();// p
     const interestRateResult = (rate / 100) / 12;//r
     resultMontlly = mortgageA * interestRateResult;
-    resultYearlly = resultMontlly * 300;
+    resultYearlly = resultMontlly * (mortgageT * 12);
     monthlyPayment.textContent = `£${resultMontlly.toFixed(2)}`;
     yearlyPayment.textContent = `£${resultYearlly.toFixed(2)}`;
-    
+
 }
 
 
@@ -130,13 +130,14 @@ function interestOnlyMethod() {
 const clearAll = document.getElementById('clearAll');
 
 
-clearAll.addEventListener('click', function(){
+clearAll.addEventListener('click', function () {
     mortgageAmount.value = '';
     mortgageTeam.value = '';
     interestRate.value = '';
     monthlyPayment.textContent = '';
     yearlyPayment.textContent = '';
-
+    preResult.classList.remove('hidden');
+    resultInfo.classList.add('hidden');
 });
 
 
